@@ -29,8 +29,7 @@ export class AppComponent {
     if (!this.message) {
       this.message = '';
     }
-    this.message = 'broadcast:' + this.message;
     console.log('new broadcast message from client to websocket: ', this.message);
-    this.chatService.messages.next(this.message);
+    this.chatService.messages.next('broadcast:' + this.message);
   }
 }
